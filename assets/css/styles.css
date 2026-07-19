@@ -256,6 +256,59 @@ img {
 
 /*=============== ABOUT ===============*/
 
+.abuot-container {
+  grid-template-columns: 3fr 6fr 2fr;
+  align-items: center;
+  column-gap: 4rem;
+}
+
+.about-experience {
+  width: 280px;
+  height: 420px;
+  background: var(--second-gradient);
+  border-radius: 1rem;
+  display: grid;
+  place-content: center;
+}
+
+.about-no,
+.about-title {
+  color: var(--white-color);
+}
+
+.about-no {
+  font-size: 7rem;
+  font-weight: var(--font-bold);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.about-title {
+  font-size: var(--large-font-size);
+  text-align: center;
+}
+
+.about-description {
+  font-size: var(--h2-font-size);
+  margin-bottom: 2rem;
+}
+
+.text-gradient {
+  -webkit-text-fill-color: hsla(var(--second-hue), 8%, 85%, 0.2);
+  background: var(--first-gradient);
+  background-clip: text;
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+}
+
+.about-data {
+  row-gap: 2rem;
+}
+.about-item-no {
+  font-size: var(--h2-font-size);
+  margin-bottom: 0.125rem;
+}
+
 /*=============== SERVICES ===============*/
 
 /*=============== SKILLS ===============*/
