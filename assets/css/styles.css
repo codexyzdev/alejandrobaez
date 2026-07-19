@@ -135,6 +135,11 @@ img {
     var(--first-color-dark) 100%
   );
 }
+.section-title {
+  text-align: center;
+  font-size: var(--h1-font-size);
+  margin-bottom: 4.25rem;
+}
 
 /*=============== LAYOUT ===============*/
 .container {
@@ -294,7 +299,7 @@ img {
 }
 
 .text-gradient {
-  -webkit-text-fill-color: hsla(var(--second-hue), 8%, 85%, 0.2);
+  -webkit-text-fill-color: hsl(var(--second-hue), 8%, 85%, 0.2);
   background: var(--first-gradient);
   background-clip: text;
   background-size: 0% 100%;
@@ -310,6 +315,38 @@ img {
 }
 
 /*=============== SERVICES ===============*/
+.services-container {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.services-card {
+  background: var(--container-color);
+  padding: 2rem;
+  border-radius: 1rem;
+  transition: backgroud 0.3s;
+}
+.services-card:hover {
+  background: var(--second-gradient);
+}
+
+.services-no {
+  color: var(--title-color);
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-bold);
+}
+
+.services-title {
+  font-size: var(--h3-font-size);
+  margin-bottom: 1.25rem 0.75rem;
+}
+
+.services-description {
+  font-size: var(--large-font-size);
+}
+.services-card:hover :is(.services-no, .services-title, .services-description) {
+  color: var(--white-color);
+}
 
 /*=============== SKILLS ===============*/
 
