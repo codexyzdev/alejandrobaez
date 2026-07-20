@@ -507,20 +507,20 @@
               </div>
             </div>
           </div>
-          <form class="contact-form grid">
+          <form class="contact-form grid" id="contact-form">
             <div class="contact-form-div">
               <label for="name" class="contact-label">Name</label>
-              <input type="text" class="contact-input" id="name" />
+              <input type="text" class="contact-input" id="contact-name" />
             </div>
             <div class="contact-form-div">
               <label for="email" class="contact-label">Email</label>
-              <input type="email" class="contact-input" id="email" />
+              <input type="email" class="contact-input" id="contact-email" />
             </div>
             <div class="contact-form-div">
               <label for="message" class="contact-label">Message</label>
               <textarea
                 class="contact-input contact-area"
-                id="message"
+                id="contact-message"
                 rows="5"
               ></textarea>
             </div>
@@ -528,7 +528,7 @@
               Send Message
             </button>
 
-            <p class="contact-message"></p>
+            <p class="contact-message" id="message"></p>
           </form>
         </div>
       </section>

@@ -53,5 +53,43 @@ function activeWork() {
 linkWork.forEach((a) => a.addEventListener("click", activeWork));
 
 /*==================== EMAIL JS ====================*/
+const contactForm = document.getElementById("contact-form");
+const contactName = document.getElementById("contact-name");
+const contactEmail = document.getElementById("contact-email");
+const contactMessage = document.getElementById("contact-message");
+const message = document.getElementById("message");
+
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  if (
+    contactName.value === "" ||
+    contactEmail.value === "" ||
+    contactMessage.value === ""
+  ) {
+    message.textContent = "Write all the input fields";
+    setTimeout(() => {
+      message.textContent = "";
+    }, 3000);
+  } else {
+    emailjs
+      .sendForm(
+        "service_m721sg9",
+        "template_q8o7jfr",
+        "#contact-form",
+        "X-zcVWJxQgIoEBsHp",
+      )
+      .then(
+        (response) => {
+          message.textContent = "Message sent ✔";
+        },
+        (error) => {
+          alert("OOPs! SOMETHING WENT WRONG...", error);
+        },
+      );
+  }
+};
+
+contactForm.addEventListener("submit", sendEmail);
 
 /*==================== SCROLL REVEAL ANIMATION ====================*/
