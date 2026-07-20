@@ -393,6 +393,11 @@ img {
 
 /*=============== RESUME ===============*/
 
+.resume-container {
+  grid-template-columns: 0.7fr;
+  justify-content: center;
+}
+
 /*=============== PORTFOLIO ===============*/
 
 /*=============== CONTACT ===============*/
