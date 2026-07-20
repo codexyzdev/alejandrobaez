@@ -396,6 +396,59 @@ img {
 .resume-container {
   grid-template-columns: 0.7fr;
   justify-content: center;
+  row-gap: 3rem;
+}
+
+.resume-item {
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 4rem;
+}
+
+.resume-right {
+  order: 2;
+}
+
+.resume-left {
+  text-align: right;
+}
+
+.resume-icon {
+  color: var(--title-color);
+  font-size: 2.75rem;
+}
+
+.resume-title {
+  font-size: var(--large-font-size);
+  margin-block: 0.75rem;
+}
+
+.resume-duration {
+  font-size: var(--small-font-size);
+}
+
+.resume-container,
+.resume-item {
+  position: relative;
+}
+
+.resume-container::after,
+.resume-item::after {
+  content: "";
+  position: absolute;
+  top: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--title-color);
+}
+
+.resume-container::after {
+  width: 2px;
+  height: 100%;
+}
+
+.resume-item::after {
+  width: 16px;
+  height: 4px;
 }
 
 /*=============== PORTFOLIO ===============*/
