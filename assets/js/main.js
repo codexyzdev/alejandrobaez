@@ -59,6 +59,8 @@ const contactEmail = document.getElementById("contact-email");
 const contactMessage = document.getElementById("contact-message");
 const message = document.getElementById("message");
 
+emailjs.init("X-zcVWJxQgIoEBsHp");
+
 const sendEmail = (e) => {
   e.preventDefault();
 
@@ -74,17 +76,19 @@ const sendEmail = (e) => {
   } else {
     emailjs
       .sendForm(
-        "service_m721sg9",
-        "template_q8o7jfr",
-        "#contact-form",
+        "service_8djaw1s",
+        "template_clqe4ch",
+        contactForm,
         "X-zcVWJxQgIoEBsHp",
       )
       .then(
         (response) => {
           message.textContent = "Message sent ✔";
+          contactForm.reset();
         },
         (error) => {
-          alert("OOPs! SOMETHING WENT WRONG...", error);
+          console.error("EmailJS error:", error);
+          message.textContent = "Something went wrong. Please try again.";
         },
       );
   }
