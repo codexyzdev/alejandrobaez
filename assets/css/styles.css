@@ -351,6 +351,44 @@ img {
 /*=============== SKILLS ===============*/
 .skills-container {
   grid-template-columns: repeat(2, max-content);
+  justify-content: center;
+  gap: 10rem;
+}
+.skills-title {
+  text-align: center;
+  font-size: var(--h3-font-size);
+  margin-bottom: 3rem;
+}
+
+.skills-items {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+}
+
+.skills-data {
+  text-align: center;
+}
+.skills-blob {
+  width: 90px;
+  height: 110px;
+  background-color: var(--container-color);
+  border-radius: 3rem;
+  display: grid;
+  place-items: center;
+  margin-inline: auto;
+}
+
+.skills-name {
+  font-size: var(--large-font-size);
+  margin-block: 1rem 0.25rem;
+}
+
+.skill-level {
+  font-size: var(--small-font-size);
+}
+
+.skills-img {
+  width: 40px;
 }
 
 /*=============== RESUME ===============*/
