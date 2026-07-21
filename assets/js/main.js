@@ -1,11 +1,30 @@
 /*==================== MENU SHOW & HIDDEN ====================*/
+const navMenu = document.getElementById("nav-menu");
+const navToggle = document.getElementById("nav-toggle");
+const navClose = document.getElementById("nav-close");
+const navLinks = document.querySelectorAll(".nav-link");
 
 /*===== MENU SHOW =====*/
-/* Validate if constant exists */
+if (navToggle && navMenu) {
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("show-menu");
+  });
+}
 
 /*===== MENU HIDDEN =====*/
-/* Validate if constant exists */
+if (navClose && navMenu) {
+  navClose.addEventListener("click", () => {
+    navMenu.classList.remove("show-menu");
+  });
+}
 
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    if (window.innerWidth <= 1024 && navMenu) {
+      navMenu.classList.remove("show-menu");
+    }
+  });
+});
 /*==================== REMOVE MENU MOBILE ====================*/
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/
@@ -176,5 +195,5 @@ sr.reveal(`.skills-developer, .resume-left, .contact-group`, {
 });
 
 sr.reveal(`.skills-designer, .resume-right, .contact-form`, {
-  origin: " right",
+  origin: "right",
 });
