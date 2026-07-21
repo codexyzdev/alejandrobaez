@@ -19,6 +19,26 @@ const scrollHeader = () => {
 window.addEventListener("scroll", scrollHeader);
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
+const sections = document.querySelectorAll("section[id]");
+const scrollActive = () => {
+  const scrollY = window.pageYOffset;
+  sections.forEach((current) => {
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = current.offsetTop - 58;
+    const sectionId = current.getAttribute("id");
+    const sectionClass = document.querySelector(
+      `.nav-menu a[href*=${sectionId}]`,
+    );
+
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      sectionClass.classList.add("active-link");
+    } else {
+      sectionClass.classList.remove("active-link");
+    }
+  });
+};
+
+window.addEventListener("scroll", scrollActive);
 
 /*==================== SCROLL ABOUT ANIMATION ====================*/
 gsap.registerPlugin(ScrollTrigger);
@@ -36,6 +56,30 @@ gsap.utils.toArray(".text-gradient").forEach((span) => {
 });
 
 /*==================== DARK LIGHT THEME ====================*/
+window.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("theme-toggle");
+
+  function applyTheme(theme) {
+    if (theme === "light") {
+      document.body.classList.add("light-theme");
+      toggleBtn.classList.remove("ri-sun-line");
+      toggleBtn.classList.add("ri-moon-line");
+    } else {
+      document.body.classList.remove("light-theme");
+      toggleBtn.classList.remove("ri-moon-line");
+      toggleBtn.classList.add("ri-sun-line");
+    }
+    localStorage.setItem("theme", theme);
+  }
+
+  const savedTheme = localStorage.getItem("theme") || "dark";
+  applyTheme(savedTheme);
+
+  toggleBtn.addEventListener("click", () => {
+    const isLigth = document.body.classList.contains("light-theme");
+    applyTheme(isLigth ? "dark" : "light");
+  });
+});
 
 /*==================== MIXITUP FILTER PORTFOLIO ====================*/
 

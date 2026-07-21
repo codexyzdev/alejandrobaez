@@ -106,11 +106,29 @@ img {
 }
 
 /*=============== Variables Dark theme ===============*/
+.light-theme {
+  --title-color: hsl(var(--second-hue), 8%, 16%);
+  --text-color: hsl(var(--second-hue), 8%, 28%);
+  --body-color: hsl(var(--second-hue), 8%, 99%);
+  --container-color: hsl(var(--second-hue), 8%, 95%);
+  --first-gradient: linear-gradient(
+    150deg,
+    var(--first-color-dark) 0%,
+    var(--first-color) 100%
+  );
+}
 
 /*========== 
     Color changes in some parts of 
     the website, in light theme
 ==========*/
+.light-theme .scroll-header {
+  box-shadow: 0 4px 4px hsla(var(--first-hue), 0%, 4%, 0.1);
+}
+.light-theme .text-gradient{
+  -webkit-text-fill-color: hsla(var(--second-hue), 92%, 15%, 0.2);
+
+}
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section {
@@ -199,6 +217,7 @@ img {
 }
 .change-theme {
   font-size: 1.25rem;
+  cursor: pointer;
 }
 .nav-btns {
   align-items: center;
@@ -210,6 +229,9 @@ img {
 }
 
 /* Active link */
+.active-link {
+  color: var(--first-color);
+}
 
 /* Change background header */
 .scroll-header {
