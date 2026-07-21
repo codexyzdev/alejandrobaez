@@ -74,23 +74,16 @@ const sendEmail = (e) => {
       message.textContent = "";
     }, 3000);
   } else {
-    emailjs
-      .sendForm(
-        "service_8djaw1s",
-        "template_clqe4ch",
-        contactForm,
-        "X-zcVWJxQgIoEBsHp",
-      )
-      .then(
-        (response) => {
-          message.textContent = "Message sent ✔";
-          contactForm.reset();
-        },
-        (error) => {
-          console.error("EmailJS error:", error);
-          message.textContent = "Something went wrong. Please try again.";
-        },
-      );
+    emailjs.sendForm("service_8djaw1s", "template_clqe4ch", contactForm).then(
+      (response) => {
+        message.textContent = "Message sent ✔";
+        contactForm.reset();
+      },
+      (error) => {
+        console.error("EmailJS error:", error);
+        message.textContent = "Something went wrong. Please try again.";
+      },
+    );
   }
 };
 
