@@ -61,6 +61,11 @@ const message = document.getElementById("message");
 
 emailjs.init("X-zcVWJxQgIoEBsHp");
 
+const ClearMessageText = (timeout = 3000) =>
+  setTimeout(() => {
+    message.textContent = "";
+  }, timeout);
+
 const sendEmail = (e) => {
   e.preventDefault();
 
@@ -70,18 +75,19 @@ const sendEmail = (e) => {
     contactMessage.value === ""
   ) {
     message.textContent = "Write all the input fields";
-    setTimeout(() => {
-      message.textContent = "";
-    }, 3000);
+    ClearMessageText();
   } else {
     emailjs.sendForm("service_8djaw1s", "template_clqe4ch", contactForm).then(
       (response) => {
         message.textContent = "Message sent ✔";
         contactForm.reset();
+
+        ClearMessageText(5000);
       },
       (error) => {
         console.error("EmailJS error:", error);
         message.textContent = "Something went wrong. Please try again.";
+        ClearMessageText();
       },
     );
   }
