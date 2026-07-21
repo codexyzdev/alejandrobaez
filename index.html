@@ -11,6 +11,24 @@
     />
 
     <!--=============== CSS ===============-->
+    <script>
+      (function () {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+            .matches
+            ? "dark"
+            : "light";
+          const theme = savedTheme || systemTheme;
+          const root = document.documentElement;
+
+          root.classList.toggle("light-theme", theme === "light");
+          root.style.colorScheme = theme;
+        } catch (error) {
+          console.error("Theme initialization failed:", error);
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="assets/css/styles.css" />
 
     <title>Portafolio website alejandro baez</title>

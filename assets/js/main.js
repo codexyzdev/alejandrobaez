@@ -60,24 +60,28 @@ window.addEventListener("DOMContentLoaded", () => {
   const toggleBtn = document.getElementById("theme-toggle");
 
   function applyTheme(theme) {
+    const root = document.documentElement;
+
     if (theme === "light") {
-      document.body.classList.add("light-theme");
-      toggleBtn.classList.remove("ri-sun-line");
-      toggleBtn.classList.add("ri-moon-line");
+      root.classList.add("light-theme");
+      toggleBtn?.classList.remove("ri-sun-line");
+      toggleBtn?.classList.add("ri-moon-line");
     } else {
-      document.body.classList.remove("light-theme");
-      toggleBtn.classList.remove("ri-moon-line");
-      toggleBtn.classList.add("ri-sun-line");
+      root.classList.remove("light-theme");
+      toggleBtn?.classList.remove("ri-moon-line");
+      toggleBtn?.classList.add("ri-sun-line");
     }
+
+    root.style.colorScheme = theme;
     localStorage.setItem("theme", theme);
   }
 
   const savedTheme = localStorage.getItem("theme") || "dark";
   applyTheme(savedTheme);
 
-  toggleBtn.addEventListener("click", () => {
-    const isLigth = document.body.classList.contains("light-theme");
-    applyTheme(isLigth ? "dark" : "light");
+  toggleBtn?.addEventListener("click", () => {
+    const isLight = document.documentElement.classList.contains("light-theme");
+    applyTheme(isLight ? "dark" : "light");
   });
 });
 
