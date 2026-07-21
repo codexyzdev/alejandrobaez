@@ -18,6 +18,7 @@ if (navClose && navMenu) {
   });
 }
 
+/*==================== REMOVE MENU MOBILE ====================*/
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     if (window.innerWidth <= 1024 && navMenu) {
@@ -25,7 +26,6 @@ navLinks.forEach((link) => {
     }
   });
 });
-/*==================== REMOVE MENU MOBILE ====================*/
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/
 const scrollHeader = () => {
