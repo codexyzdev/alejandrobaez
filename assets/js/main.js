@@ -11,7 +11,7 @@
 /*==================== CHANGE BACKGROUND HEADER ====================*/
 const scrollHeader = () => {
   const header = document.getElementById("header");
-  this.scrollY >= 20
+  window.scrollY >= 20
     ? header.classList.add("scroll-header")
     : header.classList.remove("scroll-header");
 };
@@ -175,6 +175,6 @@ sr.reveal(`.skills-developer, .resume-left, .contact-group`, {
   origin: "left",
 });
 
-sr.reveal(`skills-designer, .resume-right, .contact-form`, {
+sr.reveal(`.skills-designer, .resume-right, .contact-form`, {
   origin: " right",
 });
