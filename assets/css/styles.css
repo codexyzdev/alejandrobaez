@@ -170,7 +170,8 @@ img {
 
 /*=============== LAYOUT ===============*/
 .container {
-  max-width: 1320px;
+  width: 100%;
+  max-width: 1200px;
   margin-inline: auto;
   padding-inline: 1.25rem;
 }
@@ -274,10 +275,16 @@ img {
 }
 
 .home-img-wrapper {
-  width: clamp(14rem, 5.3402rem+39.5876w, 38rem);
+  width: clamp(14rem, 5.3402rem + 39.5876vw, 38rem);
   background: var(--second-gradient);
   border-radius: 51% 49% 77% 23% / 65% 50% 50% 35%;
   overflow: hidden;
+}
+
+.home-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .home-social {
@@ -688,9 +695,69 @@ img {
 /*=============== BREAKPOINTS ===============*/
 /* For large devices */
 @media screen and (max-width: 1208px) {
+  .home-social-link {
+    font-size: var(--large-font-size);
+  }
+  .abuot-container {
+    column-gap: 3rem;
+  }
+  .about-experience {
+    width: 260px;
+    height: 400px;
+  }
+  .about-no {
+    font-size: 6.5rem;
+  }
+  .services-container,
+  .work-container {
+    gap: 1.5rem;
+  }
+  .skills-container {
+    column-gap: 6rem;
+  }
+  .skills-items {
+    gap: 2.75ren 3rem;
+  }
+  .resume-container {
+    grid-template-columns: 0.8fr;
+  }
+
+  .contact-icon {
+    width: 58px;
+    font-size: 1.75rem;
+  }
 }
 
 @media screen and (max-width: 1024px) {
+  .nav {
+    height: 3.75rem;
+  }
+  .nav-toggle,
+  .nav-close {
+    display: inline-flex;
+    color: var(--title-color);
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: hsla(var(--first-hue), 0%, 4%, 0.4);
+    width: 55%;
+    height: 100%;
+    padding: 5rem 0 0 3rem;
+    backdrop-filter: blur(24px);
+  }
+  .nav-list {
+    flex-direction: column;
+    row-gap: 3rem;
+  }
+  .nav-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
 }
 
 /* For medium devices */
