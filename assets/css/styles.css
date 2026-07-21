@@ -212,6 +212,10 @@ img {
 /* Active link */
 
 /* Change background header */
+.scroll-header {
+  background-color: var(--body-color);
+  box-shadow: 0 4px 4px hsla(var(--first-hue), 0%, 4%, 0.2);
+}
 
 /*=============== MAIN ===============*/
 
@@ -299,7 +303,7 @@ img {
 }
 
 .text-gradient {
-  -webkit-text-fill-color: hsl(var(--second-hue), 8%, 85%, 0.2);
+  -webkit-text-fill-color: hsla(var(--second-hue), 8%, 85%, 0.2);
   background: var(--first-gradient);
   background-clip: text;
   background-size: 0% 100%;
@@ -619,6 +623,36 @@ img {
   font-weight: var(--font-medium);
 }
 /*=============== FOOTER ===============*/
+.footer {
+  background-color: var(--container-color);
+  padding-block: 2rem;
+}
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-social {
+  display: flex;
+  column-gap: 1rem;
+}
+
+.footer-link {
+  color: var(--title-color);
+  font-size: var(--large-font-size);
+  transition: color 0.3s;
+}
+.footer-link:hover {
+  color: var(--first-color);
+}
+
+.footer-copyright {
+  font-weight: var(--font-semi-bold);
+}
+.footer-copyright span {
+  color: var(--first-color);
+}
 
 /*=============== BREAKPOINTS ===============*/
 /* For large devices */
