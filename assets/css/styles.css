@@ -695,7 +695,8 @@ img {
 .footer-copyright {
   font-weight: var(--font-semi-bold);
 }
-.footer-copyright span {
+.footer-copyright span,
+.footer-copyright a {
   color: var(--first-color);
 }
 

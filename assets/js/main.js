@@ -149,19 +149,19 @@ const sendEmail = (e) => {
     contactEmail.value === "" ||
     contactMessage.value === ""
   ) {
-    message.textContent = "Write all the input fields";
+    message.textContent = "Completa todos los campos";
     ClearMessageText();
   } else {
     emailjs.sendForm("service_8djaw1s", "template_clqe4ch", contactForm).then(
       (response) => {
-        message.textContent = "Message sent ✔";
+        message.textContent = "Mensaje enviado ✔";
         contactForm.reset();
 
         ClearMessageText(5000);
       },
       (error) => {
         console.error("EmailJS error:", error);
-        message.textContent = "Something went wrong. Please try again.";
+        message.textContent = "Algo salió mal. Inténtalo de nuevo.";
         ClearMessageText();
       },
     );
