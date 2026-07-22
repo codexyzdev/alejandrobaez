@@ -723,7 +723,7 @@ img {
     column-gap: 6rem;
   }
   .skills-items {
-    gap: 2.75ren 3rem;
+    gap: 3rem;
   }
   .resume-container {
     grid-template-columns: 0.8fr;
@@ -871,6 +871,9 @@ img {
   }
   .resume-left {
     text-align: left;
+  }
+  .about-experience {
+    width: 100%;
   }
 }
 
