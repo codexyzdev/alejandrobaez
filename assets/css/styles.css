@@ -4,7 +4,7 @@
 /*=============== VARIABLES CSS ===============*/
 :root {
   /*========== Colors ==========*/
-  --first-hue: 260;
+  --first-hue: 220;
   --second-hue: 216;
   --first-color: hsl(var(--first-hue), 91%, 64%);
   --first-color-dark: hsl(var(--first-hue), 62%, 20%);
