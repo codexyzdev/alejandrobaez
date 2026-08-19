@@ -53,18 +53,14 @@ const sections = document.querySelectorAll("section[id]");
 const scrollActive = () => {
   const scrollY = window.pageYOffset;
   sections.forEach((current) => {
-    const sectionHeight = current.offsetHeight;
     const sectionTop = current.offsetTop - 58;
-    const sectionId = current.getAttribute("id");
-    const sectionClass = document.querySelector(
-      `.nav-menu a[href*=${sectionId}]`,
-    );
+    const sectionHeight = current.offsetHeight;
+    const link = document.querySelector(`.nav-menu a[href="#${current.id}"]`);
 
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      sectionClass.classList.add("active-link");
-    } else {
-      sectionClass.classList.remove("active-link");
-    }
+    const isActive =
+      scrollY > sectionTop && scrollY <= sectionTop + sectionHeight;
+
+    link?.classList.toggle("active-link", isActive);
   });
 };
 
