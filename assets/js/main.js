@@ -27,6 +27,17 @@ navLinks.forEach((link) => {
   });
 });
 
+document.addEventListener("click", (event) => {
+  if (navMenu && navMenu.classList.contains("show-menu")) {
+    const isClickInsideMenu = navMenu.contains(event.target);
+    const isClickOnToggle = navToggle && navToggle.contains(event.target);
+
+    if (!isClickInsideMenu && !isClickOnToggle) {
+      navMenu.classList.remove("show-menu");
+    }
+  }
+});
+
 /*==================== CHANGE BACKGROUND HEADER ====================*/
 const scrollHeader = () => {
   const header = document.getElementById("header");
